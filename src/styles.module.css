@@ -52,6 +52,8 @@
   background: #172746;
   color: #ffffff;
   height: 90vh;
+  /* width: 90em; */
+  display: flex;
 }
 .Main {
   display: flex;

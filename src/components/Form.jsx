@@ -4,9 +4,7 @@ import { FaRupeeSign } from "react-icons/fa";
 import { IoMdRadioButtonOn } from "react-icons/io";
 
 const FormComponent = () => {
-  const [subscription1, setSubscription1] = useState();
-  const [subscription2, setSubscription2] = useState();
-  const [subscription3, setSubscription3] = useState();
+  const [selectedplan, setPlan] = useState();
 
   return (
     <div className={styles.content_container}>
@@ -47,9 +45,8 @@ const FormComponent = () => {
             <input
               type="radio"
               name="subscription"
-              value={99 / 12}
-              id="plan1"
-              onChange={(e) => setSubscription1(e.target.value)}
+              value={179}
+              onChange={(e) => setPlan(e.target.value)}
             />
             <div className={styles.input_text_Field}>
               <label htmlFor="">12 Months Subscription</label>
@@ -58,12 +55,12 @@ const FormComponent = () => {
                 <span className={styles.span_bold} id={styles.span_primary}>
                   {" "}
                   <FaRupeeSign className={styles.input_rupee} />
-                  99
+                  179
                 </span>
                 <br></br>{" "}
                 <span className={styles.span_bold} id={styles.span_secondary}>
                   <FaRupeeSign className={styles.input_rupee} />
-                  {subscription1}
+                  15
                 </span>
                 /mo
               </p>
@@ -77,8 +74,8 @@ const FormComponent = () => {
             <input
               type="radio"
               name="subscription"
-              value={99 / 6}
-              onChange={(e) => setSubscription2(e.target.value)}
+              value={149}
+              onChange={(e) => setPlan(e.target.value)}
             />
             <div className={styles.input_text_Field}>
               <label htmlFor="">6 Months Subscription</label>
@@ -87,12 +84,12 @@ const FormComponent = () => {
                 <span className={styles.span_bold} id={styles.span_primary}>
                   {" "}
                   <FaRupeeSign className={styles.input_rupee} />
-                  99
+                  149
                 </span>
                 <br></br>{" "}
                 <span className={styles.span_bold} id={styles.span_secondary}>
                   <FaRupeeSign className={styles.input_rupee} />
-                  {subscription2}
+                  25
                 </span>
                 /mo
               </p>
@@ -103,8 +100,8 @@ const FormComponent = () => {
             <input
               type="radio"
               name="subscription"
-              value={99 / 3}
-              onChange={(e) => setSubscription3(e.target.value)}
+              value={99}
+              onChange={(e) => setPlan(e.target.value)}
             />
             <div className={styles.input_text_Field}>
               <label htmlFor="">3 Months Subscription</label>
@@ -118,7 +115,7 @@ const FormComponent = () => {
                 <br></br>{" "}
                 <span className={styles.span_bold} id={styles.span_secondary}>
                   <FaRupeeSign className={styles.input_rupee} />
-                  {subscription3}
+                  33
                 </span>
                 /mo
               </p>
@@ -161,10 +158,10 @@ const FormComponent = () => {
                 <span className={styles.span_bold}>Total </span>
                 {"("}Incl. of 18% GST{")"}
               </p>
-              <p id={styles.summary_text_right}>
+              <div id={styles.summary_text_right}>
                 <FaRupeeSign />
-                117
-              </p>
+                {selectedplan}
+              </div>
             </div>
           </div>
         </div>
